@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# --- Next / build outputs ---
+.next/
+out/
+dist/
+
+# --- Turbopack / Next cache ---
+**/.turbo/
+**/turbopack/
+**/cache/
+dev/cache/
+
+# --- Node ---
+node_modules/
+
+# --- Env ---
+.env
+.env.*
