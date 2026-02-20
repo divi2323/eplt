@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="felt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b3a28"/>
+      <stop offset="1" stop-color="#04130c"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5d36b"/>
+      <stop offset="1" stop-color="#a87a10"/>
+    </linearGradient>
+  </defs>
+
+  <!-- scalloped badge -->
+  <path d="M256 20 L290 42 L328 30 L354 60 L394 60 L404 98 L442 116 L434 154 L462 188 L438 220 L448 258 L410 274 L402 314 L364 314 L338 342 L300 330 L256 352 L212 330 L174 342 L148 314 L110 314 L102 274 L64 258 L74 220 L50 188 L78 154 L70 116 L108 98 L118 60 L158 60 L184 30 L222 42 Z" fill="url(#felt)" stroke="url(#rim)" stroke-width="14"/>
+
+  <!-- jester face mask -->
+  <path d="M170 206 C200 150, 312 150, 342 206 C344 266, 308 320, 256 334 C204 320, 168 266, 170 206 Z" fill="#05170f" stroke="#1fe18b" stroke-opacity="0.25" stroke-width="8"/>
+
+  <!-- jester cap (compact) -->
+  <path d="M180 200 C205 120, 245 118, 256 150 C267 118, 307 120, 332 200 C308 190, 292 198, 256 196 C220 198, 204 190, 180 200 Z" fill="#0a2a1d" stroke="url(#rim)" stroke-width="6"/>
+  <circle cx="180" cy="200" r="14" fill="url(#rim)"/>
+  <circle cx="332" cy="200" r="14" fill="url(#rim)"/>
+  <circle cx="256" cy="148" r="14" fill="url(#rim)"/>
+
+  <!-- suit quartet -->
+  <g transform="translate(0,18)">
+    <path d="M256 270 C244 252, 216 250, 216 278 C216 304, 240 318, 256 336 C272 318, 296 304, 296 278 C296 250, 268 252, 256 270 Z" fill="#ef4444"/>
+    <path d="M206 300 L256 242 L306 300 L256 358 Z" fill="#2563eb" opacity="0.95"/>
+    <path d="M220 320 C220 292, 256 268, 256 252 C256 268, 292 292, 292 320 C292 344, 272 354, 256 342 C240 354, 220 344, 220 320 Z" fill="#0b0b0f" opacity="0.95"/>
+    <rect x="248" y="340" width="16" height="26" rx="6" fill="#0b0b0f" opacity="0.95"/>
+    <circle cx="238" cy="292" r="14" fill="#22c55e"/>
+    <circle cx="274" cy="292" r="14" fill="#22c55e"/>
+    <circle cx="256" cy="318" r="14" fill="#22c55e"/>
+    <rect x="249" y="327" width="14" height="38" rx="6" fill="#16a34a"/>
+  </g>
+
+  <text x="256" y="468" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="30" font-weight="900" fill="#f8e7b8" letter-spacing="3">EPLT</text>
+</svg>
