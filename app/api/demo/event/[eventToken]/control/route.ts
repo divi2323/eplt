@@ -63,7 +63,6 @@ export async function POST(req: Request, context: Ctx) {
         // Register means: player is in the tournament and paid
         p.status = "REGISTERED";
         p.paid = true;
-        if (p.busted) p.busted = false;
         if (p.addon === undefined) p.addon = false;
         if (p.rebuys === undefined) p.rebuys = 0;
 
@@ -84,7 +83,6 @@ export async function POST(req: Request, context: Ctx) {
         p.paid = false;
         p.rebuys = 0;
         p.addon = false;
-        p.busted = false;
 
         model.updatedAt = Date.now();
         break;
@@ -147,35 +145,6 @@ export async function POST(req: Request, context: Ctx) {
           p.finishPos = null;
           recomputeBustAndFinishes(model);
         }
-        break;
-      }
-
-      case "moveFinisher": {
-        const b: any = body as any;
-        const playerId = String(b.playerId || "");
-        const dir = String(b.dir || "");
-        if (!playerId) throw new Error("playerId required");
-
-        const bustedSorted = model.players
-          .filter((p: any) => p.status === "BUSTED" && Number.isFinite(Number(p.finishPos)))
-          .sort((a: any, c: any) => Number(a.finishPos) - Number(c.finishPos));
-
-        const idx = bustedSorted.findIndex((p: any) => p.id === playerId);
-        if (idx < 0) break;
-        const delta = dir === "up" ? -1 : dir === "down" ? 1 : 0;
-        if (!delta) break;
-        const j = idx + delta;
-        if (j < 0 || j >= bustedSorted.length) break;
-
-        const a = bustedSorted[idx];
-        const c = bustedSorted[j];
-        const ao = Number(a.bustOrder) || 0;
-        const co = Number(c.bustOrder) || 0;
-        a.bustOrder = co;
-        c.bustOrder = ao;
-
-        recomputeBustAndFinishes(model);
-        model.updatedAt = Date.now();
         break;
       }
 

@@ -9,6 +9,10 @@ export type DemoPlayer = {
   seat?: number | null;
   paid?: boolean;
   bustOrder?: number | null;
+  addon?: boolean;
+  finishPos?: number | null;
+  playerNumber?: string;
+  rebuyCount?: number;
 };
 
 export type DemoEventModel = {
@@ -28,6 +32,7 @@ export type DemoEventModel = {
 
   eventToken: string;
   createdAt: number;
+  updatedAt?: number;
 
   // seating config (demo)
   seatsPerTable: number;
